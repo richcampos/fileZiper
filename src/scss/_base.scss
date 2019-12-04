@@ -1,0 +1,123 @@
+/********** Colores ************/
+
+$lblue: rgb(97,164,215);
+$lxblue: rgb(122,173,211);
+$blue: rgb(0,48,87);
+$orange: rgb(255,158,24);
+$white: #fff;
+
+@mixin color($name, $value){
+    .#{$name} {
+        color: $value;
+    }
+    .bg-#{$name} {
+        background-color: $value;
+    }
+}
+
+@include color('lblue', $lblue);
+@include color('lxblue', $lxblue);
+@include color('blue', $blue);
+@include color('orange', $orange);
+@include color('white', $white);
+
+
+/********** Fuentes ***********/
+@import url("https://use.typekit.net/tnm1juf.css");
+
+.mpB {
+    font-family: ff-meta-web-pro, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.mS1 {
+    font-family: museo-sans, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.uc {
+    text-transform: uppercase;
+}
+
+.ms3 {
+    font-family: museo-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ms3Italic {
+    font-family: museo-sans, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.ms5 {
+    font-family: museo-sans, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ms7 {
+    font-family: museo-sans, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ms9 {
+    font-family: museo-sans, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/********** Transition ***********/
+@mixin transition($property...){
+    -moz-transition:    $property;
+    -o-transition:      $property;
+    -webkit-transition: $property;
+    transition:         $property;
+}
+
+/********** Transform ***********/
+@mixin transform($transforms...){
+    -moz-transform:    $transforms;
+    -o-transform:      $transforms;
+    -ms-transform:     $transforms;
+    -webkit-transform: $transforms;
+    transform:         $transforms;
+}
+
+//Rotate
+@mixin rotate($deg){
+    @include transform( rotate(#{$deg}deg) )
+}
+
+//Rotate X
+@mixin rotateX($deg){
+    @include transform( rotateX(#{$deg}deg) )
+}
+
+//Scale
+@mixin scale($scale){
+    @include transform( scale($scale) )
+}
+
+//Translate
+@mixin translate($x, $y){
+    @include transform( translate($x, $y) )
+}
+
+//Skew
+@mixin skew($x, $y){
+    @include transform( skew(#{$x}deg, #{$y}deg) )
+}
+
+//Transform Origin
+@mixin transform-origin($origin...){
+    -moz-transform-origin:     $origin;
+    -o-transform-origin:      $origin;
+    -ms-transform-origin:     $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin:         $origin;
+}

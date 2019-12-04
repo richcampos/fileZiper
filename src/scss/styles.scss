@@ -1,0 +1,41 @@
+@import 'base';
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  color: $blue;
+  font-family: museo-sans, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.double {
+    display: flex;
+
+    @media(max-width: 960px){
+        flex-direction: column;
+    }
+
+    .left {
+        width: 30%;
+        position: relative;
+
+        @media(max-width: 960px){
+            width: auto;
+        }
+    }
+
+    .right {
+        width: 70%;
+
+        @media(max-width: 960px){
+            width: auto;
+            margin-top: 5%;
+        }
+    }
+}
+
+@import 'index';
+@import 'animations'

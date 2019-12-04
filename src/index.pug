@@ -1,0 +1,40 @@
+extends layout
+
+block vars
+  - var title = "Inicio"
+  - var layoutDef = 'layout'
+  - var refLng = "en/"
+  
+block content
+  .index1(id="index1")
+    .pdf
+      img(src=require("./img/pdf1.jpg"), alt="" data="WMIA2019_ESP_Cambiamos_nuestra_forma_de_trabajar")
+      .title
+        h3 Cambiamos nuestra forma de trabajar
+    .pdf
+      img(src=require("./img/pdf2.jpg"), alt="" data="WMIA2019_ESP_Capacidades_para_el_exito_continuo")
+      .title
+        h3 Capacidades para el exito continuo
+    .pdf
+      img(src=require("./img/pdf3.jpg"), data="WMIA2019_ESP_Construyendo_comunidades_fuertes")
+      .title
+        h3 Construyendo comunidades fuertes
+    .pdf
+      img(src=require("./img/pdf4.jpg"), data="WMIA2019_ESP_Creacion_de_valor_financiero")
+      .title
+        h3 Creación de valor financiero
+    .pdf
+      img(src=require("./img/pdf5.jpg"), data="WMIA2019_ESP_Indice_GRI")
+      .title
+        h3 Indice GRI
+    .pdf
+      img(src=require("./img/pdf6.jpg"), data="WMIA2019_ESP_Modelo_de_creacion_de_Valor_Compartido")
+      .title
+        h3 Modelo de creación de valor compartido
+  .loading#loader
+    .circle
+  .merge
+    button.btn#mergeBtn Download
+    button.btn#selectAll Select All
+    button.btn#removeAll Remove All
+  #errMessage

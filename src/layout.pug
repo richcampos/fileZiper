@@ -1,0 +1,25 @@
+html(lang="es")
+    block vars
+    block ref
+        - var ref = ""
+        if layoutDef == 'layoutInt'
+            - var ref = '../'
+        else if layoutDef == 'layoutInt2'
+            - var ref = '../../'
+        else if layoutDef == 'layout'
+            - var ref = ''
+    head
+        //- <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Milenio 3 Genera - #{title}
+    body
+        block menu
+            include menu
+        block content
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.ui.js")
