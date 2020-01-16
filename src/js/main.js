@@ -19,6 +19,7 @@ const btnMerge = document.getElementById('mergeBtn')
 const btnSelect = document.getElementById('selectAll')
 const btnRemove = document.getElementById('removeAll')
 const loader = document.getElementById('loader')
+const indexChildren = document.querySelectorAll('.pdf')
 
 btnMerge.addEventListener('click', () => {
   loader.classList.add('load')
@@ -40,7 +41,7 @@ btnMerge.addEventListener('click', () => {
     .catch(e => console.log(e))
 })
 
-index1.childNodes.forEach(pdf => {
+indexChildren.forEach(pdf => {
   pdf.addEventListener('click', () => {
     pdf.classList.toggle('click')
     addFiles()
@@ -49,21 +50,21 @@ index1.childNodes.forEach(pdf => {
 })
 
 btnSelect.addEventListener('click', () => {
-  index1.childNodes.forEach(pdf => {
+  indexChildren.forEach(pdf => {
     pdf.classList.add('click')
     addFiles()
   })
 })
 
 btnRemove.addEventListener('click', () => {
-  index1.childNodes.forEach(pdf => {
+  indexChildren.forEach(pdf => {
     pdf.classList.remove('click')
     removeFiles()
   })
 })
 
 function addFiles () {
-  index1.childNodes.forEach(pdf => {
+  indexChildren.forEach(pdf => {
     if (pdf.classList.contains('click')) {
       const file = pdf.firstChild.getAttribute('data')
       const includeFile = files.includes(`./PDFs/${file}.pdf`)
@@ -76,7 +77,7 @@ function addFiles () {
 }
 
 function removeFiles () {
-  index1.childNodes.forEach(pdf => {
+  indexChildren.forEach(pdf => {
     if (!pdf.classList.contains('click')) {
       const file = pdf.firstChild.getAttribute('data')
       const index = files.indexOf(`./PDFs/${file}.pdf`)

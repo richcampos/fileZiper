@@ -2,3 +2,4 @@ material
 .DS_Store
 node_modules
 dist
+selectorPDFs
